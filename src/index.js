@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import express from 'express';
 import { Server } from "socket.io";
 import { Filter } from 'bad-words';
-import { generateMessage } from './utils/messages.js';
+import { generateMessage, generateLocationMessage } from './utils/messages.js';
 
 const app = express();
 const server = http.createServer(app);
@@ -35,7 +35,7 @@ io.on('connection', (socket) => {
     });
 
     socket.on('sendLocation', (coords, callback) => {
-        io.emit('locationMessage', `https://google.com/maps?q=${coords.latitude},${coords.longitude}`);
+        io.emit('locationMessage', generateLocationMessage(`https://google.com/maps?q=${coords.latitude},${coords.longitude}`));
         callback();
     });
 
