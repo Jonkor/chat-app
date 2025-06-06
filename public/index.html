@@ -6,49 +6,17 @@
         <link rel="stylesheet" href="/css/styles.min.css">
     </head>
     <body>
-        <div class="chat">
-            <div class="chat__sidebar">
-
-            </div>
-            <div clas="chat__main">
-                <div id="messages" class="chat__messages"></div>
-
-                <div class="compose">
-                    <form id="message-form">
-                        <input name="message" placeholder="Message">
-                        <button>Send</button>
-                    </form>
-                    <button id="send-location">Send location</button>
-                </div>
+        <div class="centered-form">
+            <div class="centered-form__box">
+                <h1>Join</h1>
+                <form action="/chat.html">
+                    <label>Display name</label>
+                    <input type="text" name="username" placeholder="Display name" required>
+                    <label>Room</label>
+                    <input type="text" name="room" placeholder="Room" required>
+                    <button>Join</button>
+                </form>
             </div>
         </div>
-
-        <script id="message-template" type="text/html">
-            <div class="message">
-                <p>
-                    <span class="message__name">Some user name</span>
-                    <span class="message__meta">{{createdAt}}</span>
-                </p>
-                <p>{{createdAt}} - {{message}}</p>
-            </div>
-        </script>
-
-        <script id="location-message-template" type="text/html">
-            <div class="message">
-                <p>
-                    <span class="message__name">Some user name</span>
-                    <span class="message__meta">{{createdAt}}</span>
-                </p>                
-                <p><a href="{{url}}" target="_blank">My current location</a></p>
-            </div>
-        </script>
-
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.2.0/mustache.min.js" integrity="sha512-CswfmQmJj8DXhm29Qc5eLk5//2EW1CaI6de+RmRhSrWrXRhkBQ3795tuwJvT6DK6EF4IVqJIRmBg8EokL6c87g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js"></script>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js" integrity="sha512-hUhvpC5f8cgc04OZb55j0KNGh4eh7dLxd/dPSJ5VyzqDWxsayYbojWyl5Tkcgrmb/RVKCRJI1jNlRbVP4WWC4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.14.0/qs.min.js" integrity="sha512-6yLIYbXqyvjSDYNO1pgBRjwWPBw66kMOb+sHqrvn457+iJiret0PeHzUlpLKHH0fYzX9bxGtPDqQ84xKrhEYSQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="/js/chat.js"></script>
     </body>
 </html>
